@@ -4,21 +4,28 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow-models/mobilenet": "^2.1.0",
+    "@tensorflow/tfjs-backend-cpu": "^4.22.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.22.0",
+    "@tensorflow/tfjs-converter": "^4.22.0",
+    "@tensorflow/tfjs-core": "^4.22.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
     "react-router-dom": "^6.0.0",
-    "@tensorflow-models/mobilenet": "^2.1.0"
+    "react-scripts": "5.0.1",
+    "rimraf": "^6.0.1",
+    "styled-components": "^6.1.15",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +50,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "peerDependencies": {
+    "@tensorflow/tfjs-backend-cpu": "^2.8.6",
+    "@tensorflow/tfjs-backend-webgl": "^2.8.6",
+    "@tensorflow/tfjs-converter": "^2.8.6",
+    "@tensorflow/tfjs-core": "^2.8.6"
   }
+  
 }

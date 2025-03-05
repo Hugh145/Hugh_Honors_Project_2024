@@ -55,6 +55,7 @@ const Navbar = ({ loggedInUser, userRole, handleLogout }) => {
               <>
               <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/birds">Birds</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/object-detection">Object Detection</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/register">Register</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
               </>

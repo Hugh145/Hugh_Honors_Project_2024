@@ -8,7 +8,9 @@ import IdentifyBirdsPage from "./pages/Identify_birds_page.js";
 import Register from "./pages/Register.js";
 import Login from "./pages/login.js";
 import UserDetails from "./pages/UserDetails.js";
+import {ObjectDetector} from "./components/objectDetector"
 import StaffDashboard from "./pages/StaffDashboard.js";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/birds" element={<Birds />} />
           <Route path="/birds/:id" element={<BirdDetails />} />
+          <Route path="/object-detection" element={<ObjectDetector />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} setUserRole={setUserRole} />} />
 
