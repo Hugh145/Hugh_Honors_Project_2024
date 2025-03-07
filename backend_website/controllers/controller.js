@@ -121,3 +121,21 @@ exports.getBirdById = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
+const TeachableMachine = require('@sashido/teachablemachine-node');
+const model = new TeachableMachine({
+  modelUrl: 'https://teachablemachine.withgoogle.com/models/46N9lZImy/',  // URL to your Teachable Machine model
+});
+
+// Image Classification function
+exports.classifyImage = async (req, res) => {
+  const { imageUrl } = req.body; // Retrieve the image URL from the request body
+  try {
+    const predictions = await model.classify({ imageUrl });
+    res.json(predictions);  // Return predictions to the client
+  } catch (error) {
+    console.error("Error classifying image:", error);
+    res.status(500).json({ error: error.message });
+  }
+};
+

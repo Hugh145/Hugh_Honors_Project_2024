@@ -13,5 +13,5 @@ router.put('/users/update', controller.updateUserProfile);
 router.get('/birds', controller.getBirds);  // Get all birds
 router.post('/birds', controller.addBird);  // Add a bird
 router.get('/birds/:id', controller.getBirdById);  // Get a bird by ID
-
+router.post('/image/classify', controller.classifyImage);  // Classify an image
 module.exports = router;

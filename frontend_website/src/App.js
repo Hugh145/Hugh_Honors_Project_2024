@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar.js";
 import Home from "./pages/Home.js";
 import Birds from "./pages/bird_Information_page_filter.js";
 import BirdDetails from "./pages/BirdDetails.js";
-import IdentifyBirdsPage from "./pages/Identify_birds_page.js";
+import IdentifyBirdsPage from "./pages/ImagePrediction.js";
 import Register from "./pages/Register.js";
 import Login from "./pages/login.js";
 import UserDetails from "./pages/UserDetails.js";
