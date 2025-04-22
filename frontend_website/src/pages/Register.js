@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// This component allows users to register for an account
+// It includes a form with fields for first name, last name, email, password, user type, address, and date of birth
+// It handles form submission and displays success or error messages
+// It uses axios to send a POST request to the server with the form data
 const Register = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -17,10 +21,17 @@ const Register = () => {
     message: null,
   });
 
+  // Function to handle form input changes
+  // It updates the state with the new value of the input field
+  // It uses the name attribute of the input field to determine which state variable to update
+  // It uses the spread operator to copy the existing state and update only the changed field
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Function to handle form submission
+  // It prevents the default form submission behavior
+// It sends a POST request to the server with the form data
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -61,9 +72,9 @@ const Register = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">Password</label>
-          <input type="password" id="inputPassword5" name="password" value={formData.password} onChange={handleChange} className="form-control" aria-describedby="passwordHelpBlock" required minLength="8" maxLength="20" />
+          <input type="password" id="inputPassword5" name="password" value={formData.password} onChange={handleChange} className="form-control" aria-describedby="passwordHelpBlock" required minLength="8" maxLength="50" />
           <div id="passwordHelpBlock" className="form-text">
-            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            Your password must be 8-50 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
           </div>
         </div>
         <div className="mb-3">

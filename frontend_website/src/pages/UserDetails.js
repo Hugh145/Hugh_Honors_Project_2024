@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+// This component allows users to view and update their profile details
+// It fetches the user details from the server and displays them in a form
+// Users can update their first name, last name, date of birth, and address
 const UserDetails = ({ loggedInUser }) => {
   const [formData, setFormData] = useState({
     email: "",

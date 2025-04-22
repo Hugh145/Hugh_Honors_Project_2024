@@ -1,6 +1,9 @@
+// src/components/Navbar.js
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+// Navbar component to display the navigation bar
+// It shows different links based on whether the user is logged in or not
 const Navbar = ({ loggedInUser, userRole, handleLogout }) => {
   const [user, setUser] = useState(loggedInUser);
   const navigate = useNavigate();
@@ -17,6 +20,7 @@ const Navbar = ({ loggedInUser, userRole, handleLogout }) => {
     }
   }, [loggedInUser]);
 
+  // Handle logout button click action. It confirms the logout action 
   const handleLogoutClick = () => {
     const confirmLogout = window.confirm("Are you sure you want to logout?");
     if (confirmLogout) {
@@ -32,10 +36,9 @@ const Navbar = ({ loggedInUser, userRole, handleLogout }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">Bird Watchers 🐦</Link>
+        <Link className="navbar-brand" to="/">Bird Finder Website 🐦</Link>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            
             {user ? (
               <>
                 <li className="nav-item">
@@ -44,20 +47,23 @@ const Navbar = ({ loggedInUser, userRole, handleLogout }) => {
                   </span>
                 </li>
                 <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/birds">Birds</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/user-details">View profile</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/identify-bird">Identify Birds</Link></li>
-                <li className="nav-item">
-                  <button className="btn btn-danger btn-sm" onClick={handleLogoutClick}>Logout</button>
-                </li>
+                <li className="nav-item"><Link className="nav-link" to="/birds">Birds Filter page</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/object-detection"> Bird classification</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/view-predictions">View Predictions</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/view-blogs">Blogs</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/create-blog">Create Blog</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/user-profile-dashboard">Dashboard</Link></li>
+                <li className="nav-item"><button className="btn btn-danger btn-sm" onClick={handleLogoutClick}>Logout</button></li>
               </>
+
             ) : (
               <>
-              <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/birds">Birds</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/object-detection">Object Detection</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/register">Register</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/birds">Birds Filter page</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/object-detection"> Bird classification</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/view-blogs">Blogs</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/register">Register</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
               </>
             )}
           </ul>
@@ -68,4 +74,5 @@ const Navbar = ({ loggedInUser, userRole, handleLogout }) => {
 };
 
 export default Navbar;
+
 

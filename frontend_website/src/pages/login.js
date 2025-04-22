@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// This component allows users to log in to the application
+// It includes a form with fields for email and password
 const Login = ({ setLoggedInUser, setUserRole }) => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState(null);
@@ -12,6 +14,8 @@ const Login = ({ setLoggedInUser, setUserRole }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission and log in the user
+  // It sends a POST request to the server with the email and password
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
